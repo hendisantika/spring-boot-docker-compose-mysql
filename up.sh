@@ -1,0 +1,1 @@
+MYSQL_DATABASE=userDB MYSQL_PASSWORD=S3cret docker-compose up
