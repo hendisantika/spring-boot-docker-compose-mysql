@@ -56,4 +56,9 @@ public class UserService {
         log.debug("User updated successfully");
         return foundUser;
     }
+
+    public void delete(Long userId) {
+        log.debug("User delete action called");
+        userRepository.deleteById(userId);
+    }
 }
