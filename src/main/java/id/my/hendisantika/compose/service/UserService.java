@@ -41,4 +41,19 @@ public class UserService {
         log.debug("User findAll action called");
         return userRepository.findAll();
     }
+
+    public User update(Long userId, User user) {
+        log.debug("User update action called");
+        User foundUser = findById(userId);
+
+        log.debug("User found");
+
+        foundUser.setFirstName(user.getFirstName());
+        foundUser.setLastName(user.getLastName());
+        foundUser.setEmail(user.getEmail());
+        userRepository.save(foundUser);
+
+        log.debug("User updated successfully");
+        return foundUser;
+    }
 }
