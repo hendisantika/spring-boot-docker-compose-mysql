@@ -43,7 +43,7 @@ It involves accessing the initializer service at [https://start.spring.io](https
 basic details in regard to the App, selecting the required dependencies then hitting on the **GENERATE** button to have
 the basic structure of the project as follows:
 
-![spring-boot-initializer](./images/spring-boot-initializer.png)
+![spring-boot-initializer](/img/start.png "Start Spring Boot")
 
 You can quickly determine the following dependencies that come packaged in the **Maven** project:
 
@@ -90,7 +90,7 @@ folder:
 
 At the end of the execution, the **Maven** build output should look like this:
 
-![maven-build](./images/maven-build.png)
+![maven-build](img/build.png "Maven Build")
 
 Other **Bash** scripts are available within the project for convenience:
 
@@ -128,7 +128,7 @@ It's straightforward, the `Dockerfile` uses an image based on **Java 17**, it co
 
 By building your image with the command `docker build .`, a successful output should be similar to the next image:
 
-![build-app-docker-image](./images/build-app-docker-image.png)
+![build-app-docker-image](img/docker.png "Docker Container")
 
 By this stage, we have the App image and since we'll use an official MySQL Docker image, we can manually spin up both
 components and link them together by using the database credentials to run the App, but to make the process easier we'll
@@ -233,23 +233,23 @@ both the application and the database. To stop the containers, press Ctrl+C.
 Using **Docker Desktop** enables you to view a nice summary of your Docker state in which we can see our running
 containers as illustrated below:
 
-![running-containers](./images/docker-desktop-running-containers.png)
+![running-containers](img/docker.png "Docker Container")
 
 The complete source code of the project is available
-on [GitHub](https://github.com/numerica-ideas/community/tree/master/docker/docker-compose-springboot-mysql).
+on [GitHub](https://github.com/hendisantika/spring-boot-docker-compose-mysql).
 
 Open POSTMAN and **create** a POST request to the URL `localhost:8080/api/users` with a random user object to be
 persisted in the DB:
 
-![create-user](./images/test-api-create-user.png)
+![create-user](img/add.png "Add User")
 
 Let's **list all users** which includes the one we just created:
 
-![list-users](./images/test-api-list-users.png)
+![list-users](img/list.png "List All users")
 
 A **ping** endpoint is also available:
 
-![ping](./images/test-api-ping.png)
+![ping](img/ping.png "Ping")
 
 ———————
 
