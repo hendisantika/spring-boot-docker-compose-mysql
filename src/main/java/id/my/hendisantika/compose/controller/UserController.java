@@ -37,4 +37,10 @@ public class UserController {
         log.debug("User findAll controller called");
         return userService.findAll();
     }
+
+    @GetMapping("/{id}")
+    public User findById(@PathVariable Long id) {
+        log.debug("User findOne controller called with id: {}", id);
+        return userService.findById(id);
+    }
 }
