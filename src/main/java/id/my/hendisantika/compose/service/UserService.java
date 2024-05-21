@@ -1,5 +1,6 @@
 package id.my.hendisantika.compose.service;
 
+import id.my.hendisantika.compose.entity.User;
 import id.my.hendisantika.compose.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,4 +22,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class UserService {
     private final UserRepository userRepository;
+
+    public User create(User user) {
+        log.debug("User create action called");
+        return userRepository.save(user);
+    }
 }
