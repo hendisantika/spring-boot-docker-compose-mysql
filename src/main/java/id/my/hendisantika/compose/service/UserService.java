@@ -4,6 +4,7 @@ import id.my.hendisantika.compose.entity.User;
 import id.my.hendisantika.compose.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 /**
@@ -26,5 +27,11 @@ public class UserService {
     public User create(User user) {
         log.debug("User create action called");
         return userRepository.save(user);
+    }
+
+    public User findById(Long userId) {
+        log.debug("User findById action called");
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new ChangeSetPersister.NotFoundException("User of id " + userId + " not found."));
     }
 }
