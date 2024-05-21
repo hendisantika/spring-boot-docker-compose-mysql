@@ -43,4 +43,10 @@ public class UserController {
         log.debug("User findOne controller called with id: {}", id);
         return userService.findById(id);
     }
+
+    @PutMapping("/{id}")
+    public User update(@PathVariable Long id, @RequestBody User user) {
+        log.debug("User update controller called with id: {}", id);
+        return userService.update(id, user);
+    }
 }
