@@ -49,4 +49,11 @@ public class UserController {
         log.debug("User update controller called with id: {}", id);
         return userService.update(id, user);
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        log.debug("User delete controller called with id: {}", id);
+        userService.delete(id);
+    }
+
 }
