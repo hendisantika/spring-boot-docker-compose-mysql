@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by IntelliJ IDEA.
  * Project : spring-boot-docker-compose-mysql
@@ -33,5 +35,10 @@ public class UserService {
         log.debug("User findById action called");
         return userRepository.findById(userId)
                 .orElseThrow(() -> new NotFoundException("User of id " + userId + " not found."));
+    }
+
+    public List<User> findAll() {
+        log.debug("User findAll action called");
+        return userRepository.findAll();
     }
 }
